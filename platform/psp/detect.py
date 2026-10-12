@@ -65,7 +65,8 @@ def configure(env):
 
     if (env["target"] == "release"):
 
-        env.Append(CCFLAGS=['-O2', '-ffast-math', '-fomit-frame-pointer'])
+        env.Append(CCFLAGS=['-Os', '-ffast-math', '-fomit-frame-pointer'])
+        env.Append(CCFLAGS=['-ffunction-sections', '-fdata-sections'])
 
     elif (env["target"] == "release_debug"):
 
@@ -75,6 +76,15 @@ def configure(env):
 
         env.Append(CCFLAGS=['-g2', '-DDEBUG_ENABLED', '-DDEBUG_MEMORY_ENABLED'])
 
+    # relax modern GCC for pspdev
+    env.Append(CCFLAGS=[
+        '-Wno-error=incompatible-pointer-types',
+        '-Wno-error=implicit-function-declaration',
+        '-Wno-error=int-conversion',
+        '-fno-strict-aliasing',
+        '-fno-delete-null-pointer-checks',
+    ])
+    env.Append(CXXFLAGS=['-fpermissive'])
 
     # Shared libraries, when requested
     #env['builtin_openssl'] = 'no'
