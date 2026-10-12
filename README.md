@@ -1,6 +1,10 @@
 # Homebrodot PSP
 
-This is a fork of [Homebrodot](https://github.com/Homebrodot/Godot?tab=readme-ov-file), mainly the branch main/2.1 a port of Godot 2.1 to the PSP. It contains the changes I made to get it building and running reliably on my setup. For the full step-by-step write-up of how I got it working, see the [wiki](docs/WIKI.md).
+This is a fork of [Homebrodot](https://github.com/Homebrodot/Godot?tab=readme-ov-file), mainly the branch main/2.1 a port of Godot 2.1 to the PSP. 
+
+It contains the changes I made to get it building and running reliably on my setup. 
+
+For the full step-by-step write-up of how I got it working, see the [wiki](docs/WIKI.md).
 
 ## My setup
 
@@ -11,7 +15,7 @@ This is a fork of [Homebrodot](https://github.com/Homebrodot/Godot?tab=readme-ov
 
 ## Changes from the original
 
-The main change is that I compile the `EBOOT.PBP` with `-Os` to get a smaller build, since the PSP 1000 only has 32 MB of RAM. 
+The main change is that I compile the `EBOOT.PBP` with `-Os` to get a smaller build, since the **PSP 1000 only has 32 MB of RAM**. 
 
 There are also other fixes and tweaks, and most of the details are in the [wiki](docs/WIKI.md).
 
